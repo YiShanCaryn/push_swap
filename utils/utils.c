@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 14:46:41 by yishan            #+#    #+#             */
-/*   Updated: 2024/12/16 15:04:42 by yishan           ###   ########.fr       */
+/*   Created: 2024/12/16 15:04:53 by yishan            #+#    #+#             */
+/*   Updated: 2024/12/18 15:23:43 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "libft/libft.h"
-
-typedef struct s_list
+void	ft_free(char **str)
 {
-	int				value;
-	int				index;
-	struct s_list	*next;
-}	t_list;
+	int	i;
 
-//util functions
-void	ft_error(char *msg);
-void	ft_check_args(int argc, char **argv);
-void	ft_free(char **str);
-
-//algorithm utils
-
-//instruction functions
-
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	while (i >= 0)
+		free(str[i--]);
+}
