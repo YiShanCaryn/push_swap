@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yisho <yisho@student.42.fr>                +#+  +:+       +#+         #
+#    By: yishan <yishan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 13:47:08 by yisho             #+#    #+#              #
-#    Updated: 2024/10/17 15:58:14 by yisho            ###   ########.fr        #
+#    Updated: 2024/12/20 10:59:59 by yishan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,20 @@ SOURCES = \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+	
+SRCSBONUS = ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
 		
 OBJECTS = $(SOURCES:.c=.o)
+
+OBJSBONUS = $(SRCSBONUS:.c=.o)
 
 HEADER = libft.h
 
@@ -32,11 +44,14 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(AR) -r $@ $?
 
+bonus: $(OBJS) $(OBJSBONUS)
+	ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
+
 %.o: %.c
 	$(CC) -c $(CFLAGS) $?
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(OBJSBONUS)
 
 fclean: clean
 	rm -f $(NAME)
