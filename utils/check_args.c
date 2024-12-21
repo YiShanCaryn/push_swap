@@ -6,7 +6,7 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:54:07 by yishan            #+#    #+#             */
-/*   Updated: 2024/12/18 15:16:51 by yishan           ###   ########.fr       */
+/*   Updated: 2024/12/21 12:21:41 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static int	ft_contains(int num, char **args, int current_index)
 
 	if (!args || !args[current_index])
 		return (0);
-
 	next_index = current_index + 1;
 	while (args[next_index])
 	{

@@ -6,7 +6,7 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:46:41 by yishan            #+#    #+#             */
-/*   Updated: 2024/12/16 15:04:42 by yishan           ###   ########.fr       */
+/*   Updated: 2024/12/21 12:22:27 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-
-typedef struct s_list
-{
-	int				value;
-	int				index;
-	struct s_list	*next;
-}	t_list;
 
 //util functions
 void	ft_error(char *msg);
