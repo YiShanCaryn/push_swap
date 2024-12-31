@@ -6,7 +6,7 @@
 #    By: yishan <yishan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/16 13:50:31 by yishan            #+#    #+#              #
-#    Updated: 2024/12/18 15:45:10 by yishan           ###   ########.fr        #
+#    Updated: 2024/12/30 11:46:45 by yishan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ LIB	=	-L./libft -lft
 INCLUDE	=	-I.
 
 SRCS =  push_swap.c\
-		utils/check_args.c\
 		utils/utils.c\
 
 OBJS = 	${SRCS:.c=.o}

@@ -6,19 +6,10 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 15:04:53 by yishan            #+#    #+#             */
-/*   Updated: 2024/12/18 15:23:43 by yishan           ###   ########.fr       */
+/*   Updated: 2024/12/30 10:21:29 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_free(char **str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	while (i >= 0)
-		free(str[i--]);
-}
