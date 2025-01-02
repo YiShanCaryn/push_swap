@@ -6,7 +6,7 @@
 #    By: yishan <yishan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 13:47:08 by yisho             #+#    #+#              #
-#    Updated: 2024/12/20 10:59:59 by yishan           ###   ########.fr        #
+#    Updated: 2025/01/02 17:53:49 by yishan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,21 +34,19 @@ OBJECTS = $(SOURCES:.c=.o)
 
 OBJSBONUS = $(SRCSBONUS:.c=.o)
 
-HEADER = libft.h
-
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(AR) -r $@ $?
+	ar rcs $@ $^
 
-bonus: $(OBJS) $(OBJSBONUS)
-	ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
+bonus: $(OBJECTS) $(OBJSBONUS)
+	ar rcs $(NAME) $^
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $?
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
 	rm -f $(OBJECTS) $(OBJSBONUS)

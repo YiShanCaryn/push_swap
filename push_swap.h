@@ -6,14 +6,14 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:46:41 by yishan            #+#    #+#             */
-/*   Updated: 2024/12/31 17:45:51 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/02 17:16:54 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <limits.h>
 # include <stdint.h>
 # include <stdlib.h>

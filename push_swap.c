@@ -6,13 +6,13 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:16:16 by yishan            #+#    #+#             */
-/*   Updated: 2024/12/31 17:45:37 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/02 17:41:25 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check(t_list *lst, int n, char *nbr)
+int	ft_check(t_list *lst, long int n, char *nbr)
 {
 	t_list	*tmp;
 	int		i;
@@ -38,9 +38,10 @@ int	ft_check(t_list *lst, int n, char *nbr)
 
 t_list	*ft_init(char **argvs, int argc)
 {
-	int		i;
-	long	nbr;
-	t_list	*res;
+	int			i;
+	long int	nbr;
+	t_list		*res;
+	t_list		*tmp;
 
 	if (argc == 2)
 		i = 0;
@@ -55,6 +56,10 @@ t_list	*ft_init(char **argvs, int argc)
 			ft_putstr_fd("Error\n", 2);
 			return (NULL);
 		}
+		tmp = ft_lstnew(nbr);
+		ft_lstadd_back(&res, tmp);
+		tmp->index = -1;
+		i++;
 	}
 	return (res);
 }
@@ -77,4 +82,6 @@ int	main(int argc, char **argv)
 	if (tab->stack_a == NULL)
 		return (-1);
 	tab->stack_b = NULL;
+	tab->asize = ft_lstsize(tab->stack_a);
+	tab->bsize = ft_lstsize(tab->stack_b);
 }
