@@ -6,7 +6,7 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:16:16 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/02 17:41:25 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/03 15:22:01 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,6 @@ int	main(int argc, char **argv)
 	tab->stack_b = NULL;
 	tab->asize = ft_lstsize(tab->stack_a);
 	tab->bsize = ft_lstsize(tab->stack_b);
+	add_index(tab->stack_a);
+	check_sort(tab);
 }

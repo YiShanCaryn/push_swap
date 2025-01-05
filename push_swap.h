@@ -6,7 +6,7 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:46:41 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/02 17:16:54 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/03 15:20:30 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct s_swap
 	int		bsize;
 }	t_swap;
 
-//instruction functions
+//helper functions
+void	add_index(t_list *lst);
 
 //algorithm utils
 

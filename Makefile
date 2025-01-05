@@ -6,7 +6,7 @@
 #    By: yishan <yishan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/16 13:50:31 by yishan            #+#    #+#              #
-#    Updated: 2025/01/02 18:14:59 by yishan           ###   ########.fr        #
+#    Updated: 2025/01/03 15:24:56 by yishan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ CFLAGS = -Werror -Wall -Wextra
 RM = rm -rf
 
 SRCS =  push_swap.c\
+		utils/add_index.c\
+		utils/check_sort.c\
 		utils/utils.c\
 		libft/libft.a\
 
