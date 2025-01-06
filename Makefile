@@ -6,7 +6,7 @@
 #    By: yishan <yishan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/16 13:50:31 by yishan            #+#    #+#              #
-#    Updated: 2025/01/03 15:24:56 by yishan           ###   ########.fr        #
+#    Updated: 2025/01/06 14:52:24 by yishan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,10 @@ RM = rm -rf
 
 SRCS =  push_swap.c\
 		utils/add_index.c\
+		utils/algorithm_s.c\
+		utils/algorithm_rr.c\
 		utils/check_sort.c\
-		utils/utils.c\
+		utils/utils_sort.c\
 		libft/libft.a\
 
 $(NAME) :
