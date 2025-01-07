@@ -1,46 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithm_rr.c                                     :+:      :+:    :+:   */
+/*   algorithm_r.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yisho <yisho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 14:52:58 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/07 15:44:58 by yisho            ###   ########.fr       */
+/*   Created: 2025/01/07 10:21:20 by yisho             #+#    #+#             */
+/*   Updated: 2025/01/07 15:35:27 by yisho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//reverse rotation operation
-//takes the last element of a stack (linked list) and moves it to the top
+//rotate operation on a stack
+//moves the top element of the stack to the bottom
+//shifting all other elements one position up
 //stack: [A] → [B] → [C] → [D]
-//stack: [D] → [A] → [B] → [C]
+//stack: [B] → [C] → [D] → [A]
 
-static void	ft_rr(t_list **stack)
+static void	ft_r(t_list **stack)
 {
-	t_list	*tmp;
-	t_list	*end;
+	t_list	*head;
 
+	head = *stack;
 	if (!(*stack) || !((*stack)->next))
 		return ;
-	tmp = *stack;
-	end = ft_lstlast(*stack);
-	while ((*stack)->next->next)
-		*stack = (*stack)->next;
-	end->next = tmp;
-	(*stack)->next = NULL;
-	*stack = end;
+	*stack = head->next;
+	head->next = NULL;
+	ft_lstlast(*stack)->next = head;
 }
 
-void	rra(t_list **stack1)
+void	ra(t_list **stack1)
 {
-	ft_rr(stack1);
-	write(1, "rra\n", 4);
+	ft_r(stack1);
+	write(1, "ra\n", 3);
 }
 
-void	rrb(t_list **stack2)
+void	rb(t_list **stack2)
 {
-	ft_rr(stack2);
-	write(1, "rrb\n", 4);
+	ft_r(stack2);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_list **stack1, t_list **stack2)
+{
+	ft_r(stack1);
+	ft_r(stack2);
+	write(1, "rr\n", 3);
 }

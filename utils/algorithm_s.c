@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm_s.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yisho <yisho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:57:51 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/06 15:04:09 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/07 15:50:27 by yisho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+//swap operation
+//stack: [A] → [B] → [C] → [D]
+//stack: [B] → [A] → [C] → [D]
 
 static void	ft_s(t_list **stack)
 {

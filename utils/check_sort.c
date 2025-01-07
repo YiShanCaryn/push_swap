@@ -3,16 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   check_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yisho <yisho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:30:31 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/06 18:50:30 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/07 15:56:27 by yisho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sort_3nbr(t_swap *tab)
+void	sort_5numbers(t_swap	*tab)
+{
+	int	len;
+
+	len = ft_lstsize(tab->stack_a);
+	
+}
+
+void	sort_3numbers(t_swap	*tab)
 {
 	t_list	*last;
 
@@ -27,6 +35,18 @@ void	sort_3nbr(t_swap *tab)
 	else if (tab->stack_a->content < last->content
 		&& tab->stack_a->next->content < last->content)
 		sa(&tab->stack_a);
+	else if (tab->stack_a->content > last->content
+		&& tab->stack_a->next->content < last->content)
+		ra(&tab->stack_a);
+	else if (tab->stack_a->content < last->content
+		&& tab->stack_a->next->content > last->content)
+	{
+		sa(&tab->stack_a);
+		ra(&tab->stack_a);
+	}
+	else if (tab->stack_a->content > last->content
+		&& tab->stack_a->next->content > last->content)
+		rra(&tab->stack_a);
 }
 
 void	check_sort(t_swap	*tab)
@@ -42,7 +62,7 @@ void	check_sort(t_swap	*tab)
 			sa(&tab->stack_a);
 	}
 	else if (len == 3)
-		sort_3nbr(tab);
+		sort_3numbers(tab);
 	else if (len == 5)
-		sort_5nbr(tab);
+		sort_5numbers(tab);
 }
