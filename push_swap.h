@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yisho <yisho@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:46:41 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/07 10:23:57 by yisho            ###   ########.fr       */
+/*   Updated: 2025/01/13 14:31:39 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,23 @@ typedef struct s_swap
 	int		bsize;
 }	t_swap;
 
+typedef struct s_push
+{
+	int	next_index;
+	int	max_index;
+	int	mid;
+	int	flag;
+}	t_push;
+
 //helper check functions
 void	add_index(t_list *lst);
 void	check_sort(t_swap	*tab);
 int		check_sorting(t_list **stack1);
-int		isrevsorted(t_swap	*tab);
+int		is_reverse_sorted(t_swap	*tab);
+t_list	*find_min_index(t_list	**stack);
+t_list	*find_max_index(t_list	**stack);
+int		is_stack_sorted(t_list	**stack1, int total_count);
+void	quick_sort(t_list **stack1, t_list **stack2, int total_count);
 
 //algorithm utils
 void	sa(t_list **stack1);
@@ -41,5 +53,7 @@ void	rrb(t_list **stack2);
 void	ra(t_list **stack1);
 void	rb(t_list **stack2);
 void	rr(t_list **stack1, t_list **stack2);
+void	pa(t_list **stack1, t_list **stack2);
+void	pb(t_list **stack1, t_list **stack2);
 
 #endif

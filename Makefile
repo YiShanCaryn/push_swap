@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yisho <yisho@student.42.fr>                +#+  +:+       +#+         #
+#    By: yishan <yishan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/16 13:50:31 by yishan            #+#    #+#              #
-#    Updated: 2025/01/07 10:21:50 by yisho            ###   ########.fr        #
+#    Updated: 2025/01/09 15:36:30 by yishan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,10 @@ SRCS =  push_swap.c\
 		utils/algorithm_s.c\
 		utils/algorithm_rr.c\
 		utils/algorithm_r.c\
+		utils/algorithm_push.c\
 		utils/check_sort.c\
 		utils/utils_sort.c\
+		utils/quick_sort.c\
 		libft/libft.a\
 
 $(NAME) :

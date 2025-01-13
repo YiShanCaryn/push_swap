@@ -6,7 +6,7 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 18:34:50 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/03 15:11:10 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/09 15:19:07 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,43 @@
 
 void	index_replace(t_list *lst, int min, int i)
 {
-	t_list	*tmp;
+	t_list	*current;
 
-	tmp = lst;
-	while (tmp)
+	current = lst;
+	while (current)
 	{
-		if (tmp->index == -1 && tmp->content == min)
+		if (current->index == -1 && current->content == min)
 			break ;
-		tmp = tmp->next;
+		current = current->next;
 	}
-	tmp->index = i;
+	current->index = i;
 }
 
 int	min_nbr(t_list *lst)
 {
-	t_list		*tmp;
+	t_list		*current;
 	long int	min;
 
 	min = LONG_MAX;
-	tmp = lst;
-	while (tmp)
+	current = lst;
+	while (current)
 	{
-		if (tmp->index == -1 && tmp->content < min)
-			min = tmp->content;
-		tmp = tmp->next;
+		if (current->index == -1 && current->content < min)
+			min = current->content;
+		current = current->next;
 	}
 	return (min);
 }
 
 void	add_index(t_list *lst)
 {
-	int	len;
+	int	length;
 	int	i;
 	int	min;
 
 	i = 0;
-	len = ft_lstsize(lst);
-	while (i < len)
+	length = ft_lstsize(lst);
+	while (i < length)
 	{
 		min = min_nbr(lst);
 		index_replace(lst, min, i);

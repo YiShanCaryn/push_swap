@@ -6,7 +6,7 @@
 /*   By: yishan <yishan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:16:16 by yishan            #+#    #+#             */
-/*   Updated: 2025/01/03 15:22:01 by yishan           ###   ########.fr       */
+/*   Updated: 2025/01/09 15:09:11 by yishan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_check(t_list *lst, long int n, char *nbr)
 {
-	t_list	*tmp;
+	t_list	*current;
 	int		i;
 
 	i = 0;
-	tmp = lst;
+	current = lst;
 	while (nbr[i])
 	{
 		if (!(((nbr[i] == '-' || nbr[i] == '+') && ft_isdigit(nbr[i + 1])
@@ -27,11 +27,11 @@ int	ft_check(t_list *lst, long int n, char *nbr)
 			return (0);
 		i++;
 	}
-	while (tmp)
+	while (current)
 	{
-		if ((int)(intptr_t)(tmp->content) == n)
+		if ((int)(intptr_t)(current->content) == n)
 			return (0);
-		tmp = tmp->next;
+		current = current->next;
 	}
 	return (1);
 }
@@ -41,7 +41,7 @@ t_list	*ft_init(char **argvs, int argc)
 	int			i;
 	long int	nbr;
 	t_list		*res;
-	t_list		*tmp;
+	t_list		*current;
 
 	if (argc == 2)
 		i = 0;
@@ -56,9 +56,9 @@ t_list	*ft_init(char **argvs, int argc)
 			ft_putstr_fd("Error\n", 2);
 			return (NULL);
 		}
-		tmp = ft_lstnew(nbr);
-		ft_lstadd_back(&res, tmp);
-		tmp->index = -1;
+		current = ft_lstnew(nbr);
+		ft_lstadd_back(&res, current);
+		current->index = -1;
 		i++;
 	}
 	return (res);
