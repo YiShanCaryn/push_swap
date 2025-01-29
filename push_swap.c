@@ -86,4 +86,7 @@ int	main(int argc, char **argv)
 	tab->bsize = ft_lstsize(tab->stack_b);
 	add_index(tab->stack_a);
 	check_sort(tab);
+	ft_lstclear(&(tab->stack_a));
+	ft_lstclear(&(tab->stack_b));
+	free(tab);
 }

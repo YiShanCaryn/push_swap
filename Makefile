@@ -18,6 +18,8 @@ CFLAGS = -Werror -Wall -Wextra
 
 RM = rm -rf
 
+LIBFT = libft/libft.a
+
 SRCS =  push_swap.c\
 		utils/add_index.c\
 		utils/algorithm_s.c\
@@ -26,21 +28,29 @@ SRCS =  push_swap.c\
 		utils/algorithm_push.c\
 		utils/check_sort.c\
 		utils/utils_sort.c\
-		utils/quick_sort.c\
-		libft/libft.a\
+		utils/quick_sort.c
 
-$(NAME) :
-	make bonus -C libft
-	gcc $(CFLAGS) $(SRCS) -o $(NAME)
+OBJS = $(SRCS:.c=.o)
+
+
+$(NAME) : $(OBJS) $(LIBFT)
+	gcc $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 all : $(NAME)
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) $< -o $@
+
+libft/libft.a:
+	make bonus -C libft
+
 
 fclean : clean
 	$(RM) $(NAME)
 	make fclean -C libft
 
 clean :
-	$(RM) $(NAME)
+	$(RM) $(OBJS);
 	make clean -C libft
 
 re : fclean all

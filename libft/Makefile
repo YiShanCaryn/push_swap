@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yishan <yishan@student.42.fr>              +#+  +:+       +#+         #
+#    By: yisho <yisho@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 13:47:08 by yisho             #+#    #+#              #
-#    Updated: 2025/01/02 18:25:23 by yishan           ###   ########.fr        #
+#    Updated: 2025/01/29 16:58:51 by yisho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCSBONUS = ft_lstnew.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
 			ft_lstadd_back.c \
+			ft_lstclear.c \
 		
 OBJECTS = $(SOURCES:.c=.o)
 
