@@ -37,14 +37,14 @@ static void	ft_rr(t_list **stack)
 	*stack = end;
 }
 
-void	rra(t_list **stack1)
+void	rra(t_list **stack_a)
 {
-	ft_rr(stack1);
+	ft_rr(stack_a);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_list **stack2)
+void	rrb(t_list **stack_b)
 {
-	ft_rr(stack2);
+	ft_rr(stack_b);
 	write(1, "rrb\n", 4);
 }

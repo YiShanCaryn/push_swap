@@ -39,7 +39,7 @@ int	ft_check(t_list *lst, long int n, char *nbr)
 t_list	*ft_init(char **argvs, int argc)
 {
 	int			i;
-	long int	nbr;
+	long		nbr;
 	t_list		*res;
 	t_list		*current;
 

@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -34,7 +35,6 @@ int		ft_isprint(int c);
 int		ft_strlen(const char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -49,6 +49,7 @@ char	*ft_strdup(const char *str);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
+long	ft_atoi(const char *str);
 
 //add
 char	*ft_substr(char const *s, unsigned int start, size_t len);
